@@ -1,2 +1,10 @@
 Demo app.
 
+Ruby
+ruby 1.8.7 (2009-06-12 patchlevel 174) [universal-darwin10.0]
+
+Rails
+rails-3.2.3
+
+Handlebars
+handlebars-1.0.0.beta.6.js
