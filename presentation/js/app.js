@@ -1,8 +1,25 @@
-var source = "<p>Hello, my name is {{name}}";
-var template = Handlebars.compile(source);
+$(function() {
 
-var data = {"name": "Oli"};
-var result = template(data);
+  var source = "Here are some interesting places:<br>" +
+               "<ul class='foo'>" +
+               "{{#each places}}" +
+               "<li>{{this.county}}, {{this.country}} with population {{this.count}}</li>" +
+               "{{/each}}" +
+               "</ul>";
 
-var elem = document.getElementById('demo');
-elem.innerHTML = result;
+  var template = Handlebars.compile(source);
+
+  $.ajax({
+    url: 'http://localhost:8000/stubs/foo.json',
+    dataType: 'json',
+    success: function(resp) {
+      console.log(resp);
+      var result = template(resp);
+      $('#demo').html(result);
+    },
+    error: function(e, x) {
+      console.log(e, x)
+    }
+  });
+
+})
