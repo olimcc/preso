@@ -8,3 +8,10 @@ rails-3.2.3
 
 Handlebars
 handlebars-1.0.0.beta.6.js
+
+HOWTO
+Navigate to the project route, then:
+$ python -m SimpleHTTPServer
+
+Application available at:
+http://localhost:8000/presentation/demo.html
